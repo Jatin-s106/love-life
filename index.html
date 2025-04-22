@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Love Page</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: sans-serif;
+      background: #fff0f5;
+      padding: 2rem;
+    }
+    #love-gif {
+      max-width: 100%;
+      margin-top: 2rem;
+      display: none;
+    }
+    #playButton {
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    #playButton:hover {
+      background-color: #ff85c1;
+    }
+  </style>
+</head>
+<body>
+  <h1>Wait for Love 💖</h1>
+  <button id="playButton">Click to Play Music</button>
+  <audio id="bg-music" preload="auto">
+    <source src="https://cdn.jsdelivr.net/gh/Jatin-s106/love-life@main/mood1.mp3" type="audio/mp3" />
+    Your browser does not support the audio element.
+  </audio>
+  <img id="love-gif" src="https://cdn.jsdelivr.net/gh/Jatin-s106/love-life@main/ledekin%20(1).gif" alt="Love GIF" />
+  <script>
+    document.getElementById('playButton').addEventListener('click', function () {
+      const audio = document.getElementById('bg-music');
+      const gif = document.getElementById('love-gif');
+      audio.play().then(() => {
+        gif.style.display = 'block';
+      }).catch(err => {
+        console.error("Audio playback failed:", err);
+      });
+    });
+  </script>
+</body>
+</html>
